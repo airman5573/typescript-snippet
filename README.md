@@ -29,6 +29,36 @@ const clock2: MaybeNoSecondClock = {
 };
 ```
 
+### 특정 타입만 뽑아낸다
+
+#### 객체로 뽑아낸다
+
+```typescript
+type Person = {
+  name: string;
+  age: number;
+};
+
+type NameObj = Pick<Person, "name">;
+
+const myNameObj: NameObj = {
+  name: "yoon",
+};
+```
+
+#### 딱 그 프로퍼티의 타입만 뽑아낸다
+
+```typescript
+type Person = {
+  name: string;
+  age: number;
+};
+
+type NameType = Person["name"];
+
+const myName: NameType = "yoon";
+```
+
 ## React
 
 ## Emotion
