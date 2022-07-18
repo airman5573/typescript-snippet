@@ -59,6 +59,25 @@ type NameType = Person["name"];
 const myName: NameType = "yoon";
 ```
 
+### 객체에서 key만 뽑아서 string union으로 만들자
+
+```typescript
+type ObjKeys<T extends object> = keyof T;
+
+const BreakPoints = {
+  xs: 0,
+  sm: 500,
+  md: 786,
+  lg: 1200,
+};
+
+type Size = ObjKeys<typeof BreakPoints>;
+
+function mq(size: Size) {
+  return `@media (max-width: ${BreakPoints[size]}px)`;
+}
+```
+
 ## React
 
 ## Emotion
